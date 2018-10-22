@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1778A46C217E455000C66B93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A46B217E455000C66B93 /* AppDelegate.swift */; };
-		1778A46E217E455000C66B93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A46D217E455000C66B93 /* ViewController.swift */; };
+		1778A46E217E455000C66B93 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A46D217E455000C66B93 /* ImageViewController.swift */; };
 		1778A471217E455000C66B93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1778A46F217E455000C66B93 /* Main.storyboard */; };
 		1778A473217E455100C66B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1778A472217E455100C66B93 /* Assets.xcassets */; };
 		1778A476217E455100C66B93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1778A474217E455100C66B93 /* LaunchScreen.storyboard */; };
 		1778A481217E455100C66B93 /* CatsTheTerribleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A480217E455100C66B93 /* CatsTheTerribleAppTests.swift */; };
 		1778A48C217E455100C66B93 /* CatsTheTerribleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A48B217E455100C66B93 /* CatsTheTerribleAppUITests.swift */; };
+		1778A49A217E456E00C66B93 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A499217E456E00C66B93 /* NetworkClient.swift */; };
+		1778A4A0217E4E4F00C66B93 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A49F217E4E4F00C66B93 /* Data.swift */; };
+		1778A4A4217E829300C66B93 /* MediaItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A4A3217E829300C66B93 /* MediaItemViewModel.swift */; };
+		1778A4A6217E954700C66B93 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		1778A468217E455000C66B93 /* CatsTheTerribleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatsTheTerribleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1778A46B217E455000C66B93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1778A46D217E455000C66B93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1778A46D217E455000C66B93 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		1778A470217E455000C66B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1778A472217E455100C66B93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1778A475217E455100C66B93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		1778A487217E455100C66B93 /* CatsTheTerribleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatsTheTerribleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1778A48B217E455100C66B93 /* CatsTheTerribleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsTheTerribleAppUITests.swift; sourceTree = "<group>"; };
 		1778A48D217E455100C66B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1778A499217E456E00C66B93 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		1778A49F217E4E4F00C66B93 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		1778A4A3217E829300C66B93 /* MediaItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemViewModel.swift; sourceTree = "<group>"; };
+		1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 		1778A45F217E454F00C66B93 = {
 			isa = PBXGroup;
 			children = (
+				1778A49F217E4E4F00C66B93 /* Data.swift */,
 				1778A46A217E455000C66B93 /* CatsTheTerribleApp */,
 				1778A47F217E455100C66B93 /* CatsTheTerribleAppTests */,
 				1778A48A217E455100C66B93 /* CatsTheTerribleAppUITests */,
@@ -97,9 +106,12 @@
 		1778A46A217E455000C66B93 /* CatsTheTerribleApp */ = {
 			isa = PBXGroup;
 			children = (
+				1778A499217E456E00C66B93 /* NetworkClient.swift */,
 				1778A46B217E455000C66B93 /* AppDelegate.swift */,
-				1778A46D217E455000C66B93 /* ViewController.swift */,
+				1778A46D217E455000C66B93 /* ImageViewController.swift */,
+				1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */,
 				1778A46F217E455000C66B93 /* Main.storyboard */,
+				1778A4A3217E829300C66B93 /* MediaItemViewModel.swift */,
 				1778A472217E455100C66B93 /* Assets.xcassets */,
 				1778A474217E455100C66B93 /* LaunchScreen.storyboard */,
 				1778A477217E455100C66B93 /* Info.plist */,
@@ -256,7 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1778A46E217E455000C66B93 /* ViewController.swift in Sources */,
+				1778A46E217E455000C66B93 /* ImageViewController.swift in Sources */,
+				1778A4A6217E954700C66B93 /* iOSDevCenters+GIF.swift in Sources */,
+				1778A49A217E456E00C66B93 /* NetworkClient.swift in Sources */,
+				1778A4A4217E829300C66B93 /* MediaItemViewModel.swift in Sources */,
+				1778A4A0217E4E4F00C66B93 /* Data.swift in Sources */,
 				1778A46C217E455000C66B93 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8L9G24X88V;
 				INFOPLIST_FILE = CatsTheTerribleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8L9G24X88V;
 				INFOPLIST_FILE = CatsTheTerribleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

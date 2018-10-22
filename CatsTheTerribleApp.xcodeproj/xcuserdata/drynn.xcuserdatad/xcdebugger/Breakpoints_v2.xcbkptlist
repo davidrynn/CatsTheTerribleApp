@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatsTheTerribleApp/NetworkClient.swift"
+            timestampString = "561944324.896559"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getMediaItems(type:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatsTheTerribleApp.NetworkClient.getMediaItems(type: CatsTheTerribleApp.CallReturnType, completion: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;CatsTheTerribleApp.ResponseError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "CatsTheTerribleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/drynn/Workspace/CatsTheTerribleApp/CatsTheTerribleApp/NetworkClient.swift"
+                  timestampString = "561942229.094144"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CatsTheTerribleApp.NetworkClient.getMediaItems(type: CatsTheTerribleApp.CallReturnType, completion: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;CatsTheTerribleApp.ResponseError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "CatsTheTerribleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/drynn/Workspace/CatsTheTerribleApp/CatsTheTerribleApp/NetworkClient.swift"
+                  timestampString = "561942229.095932"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatsTheTerribleApp/NetworkClient.swift"
+            timestampString = "561944324.896634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getMediaItems(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
