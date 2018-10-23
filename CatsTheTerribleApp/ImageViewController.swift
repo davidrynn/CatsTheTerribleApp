@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ImageIO
+import Photos
 
 class ImageViewController: UIViewController {
 
@@ -15,24 +15,25 @@ class ImageViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var randomImageButton: UIButton!
     @IBOutlet weak var gifImageButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var networkClient: NetworkClient?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         networkClient = NetworkClient()
         loadMedia(type: .random)
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func loadMedia(type: CallReturnType) {
+        activityIndicator.startAnimating()
         guard let client = networkClient else { return }
         self.label.text = "Download Started"
         client.getMediaItems(type: type) { data, error in
             DispatchQueue.main.async {
                 if let data = data {
                     switch type {
-                    case .random, .tag(type.description), .text(type.description):
+                    case .random, .tag, .text:
                         if let image = UIImage(data: data) {
                             self.imageView.image = image }
                         else {
@@ -42,20 +43,25 @@ class ImageViewController: UIViewController {
                         if let gif = UIImage.gifImageWithData(data) {
                             self.imageView.image = gif
                         }
-                    default:
-                        self.label.text = "No known call type"
-                        return
                     }
                     self.label.text = "Loaded"
 
                 } else {
-                    self.label.text = "ERROR LOADING"
+                    switch type {
+                    case .tag, .text:
+                        self.label.text = "No images for that search"
+                    default:
+                        self.label.text = "ERROR LOADING"
+                    }
                 }
+                self.activityIndicator.stopAnimating()
                 self.view.setNeedsLayout()
             }
         }
 
     }
+//    MARK: Actions
+    
 
     @IBAction func randomImageButtonTapped(_ sender: Any) {
         loadMedia(type: .random)
@@ -63,6 +69,59 @@ class ImageViewController: UIViewController {
     
     @IBAction func gifButtonTapped(_ sender: Any) {
         loadMedia(type: .gif)
+    }
+    @IBAction func longPress(_ sender: Any) {
+        guard let snapshot: UIImage = imageView.image else {
+            label.text = "No image"
+            return
+        }
+        let activityController = UIActivityViewController(activityItems: [snapshot], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceView = view
+        activityController.popoverPresentationController?.sourceRect = view.safeAreaLayoutGuide.layoutFrame
+        present(activityController, animated: true, completion: {
+            self.label.text = "media saved"
+        })
+    }
+    
+    @IBAction func tagTapped(_ sender: Any) {
+        presentTextInput(title: "Tag term to use for search:") { string in
+            guard let text = string else {
+                self.label.text = "invalid text for tag"
+                return
+            }
+            self.loadMedia(type: .tag(text))
+        }
+    }
+    
+    @IBAction func textInputTapped(_ sender: Any) {
+        presentTextInput(title: "Text to use for search:") { string in
+            guard let text = string else {
+                self.label.text = "invalid text"
+                return
+            }
+            self.loadMedia(type: .text(text))
+        }
+    }
+    
+    func presentTextInput(title: String, completion: @escaping (String?) -> ()){
+
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: title, message: "Enter a text", preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.placeholder = "Type Here"
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            if let strongAlert = alert, let textFields = strongAlert.textFields, let text = textFields[0].text {
+                completion(text)
+            }
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
