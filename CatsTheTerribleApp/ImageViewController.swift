@@ -10,19 +10,25 @@ import UIKit
 import Photos
 
 class ImageViewController: UIViewController {
-
+    
+    @IBOutlet weak var buttonContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var randomImageButton: UIButton!
     @IBOutlet weak var gifImageButton: UIButton!
+    @IBOutlet weak var tagButton: UIButton!
+    @IBOutlet weak var textButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    var networkClient: NetworkClient?
+    var visualEffectView: UIVisualEffectView!
+    var networkClient: NetworkClient!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        roundButtons()
         networkClient = NetworkClient()
+        setupBlurBackground()
         loadMedia(type: .random)
+        
     }
     
     func loadMedia(type: CallReturnType) {
@@ -31,21 +37,39 @@ class ImageViewController: UIViewController {
         self.label.text = "Download Started"
         client.getMediaItems(type: type) { data, error in
             DispatchQueue.main.async {
+                var dataImage: UIImage? = nil
                 if let data = data {
                     switch type {
                     case .random, .tag, .text:
                         if let image = UIImage(data: data) {
-                            self.imageView.image = image }
+                            dataImage = image
+                        }
                         else {
                             self.label.text = "Error loading image"
-                            }
+                        }
                     case .gif:
                         if let gif = UIImage.gifImageWithData(data) {
-                            self.imageView.image = gif
+                            dataImage = gif
                         }
                     }
                     self.label.text = "Loaded"
-
+                    if let image = dataImage {
+                        //animate image and background blur
+                        let timeInterval = 1.0
+                        UIView.transition(with: self.imageView, duration: timeInterval, options: .transitionCrossDissolve, animations: {
+                            self.imageView.image = image
+                            self.visualEffectView.backgroundColor = UIColor(patternImage: image)
+                        }, completion: nil)
+                        
+////                        UIViewPropertyAnimator(duration: timeInterval, curve: .easeInOut, animations:
+////                        UIView.animate(withDuration: timeInterval)
+////                        { self.visualEffectView.backgroundColor = UIColor(patternImage: image) }
+////                            .startAnimation()
+////
+//                        UIView.transition(with: self.visualEffectView.contentView, duration: timeInterval, options: .transitionCrossDissolve, animations: { self.visualEffectView.backgroundColor = UIColor(patternImage: image) }, completion: nil)
+                    }
+                    
+                    
                 } else {
                     switch type {
                     case .tag, .text:
@@ -58,11 +82,34 @@ class ImageViewController: UIViewController {
                 self.view.setNeedsLayout()
             }
         }
-
+        
     }
-//    MARK: Actions
+    //    MARK: Setups
+    func setupBlurBackground() {
+        let effect = UIBlurEffect(style: .light)
+        self.visualEffectView = UIVisualEffectView(effect: effect)
+        visualEffectView.frame = self.view.bounds
+        self.view.addSubview(visualEffectView)
+        self.view.sendSubviewToBack(visualEffectView)
+    }
     
-
+    func roundButtons(){
+        buttonContainerView.subviews.filter { $0 is UIButton }.forEach { roundButton($0 as! UIButton)}
+        
+    }
+    
+    func roundButton(_ button: UIButton) {
+        button.frame = CGRect(x: 100, y: 100, width: 50, height: 50)
+        button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        button.layer.shadowRadius = 1.0
+        button.layer.shadowOpacity = 0.8
+        button.layer.shadowOffset = CGSize(width: 1, height: 2)
+        button.clipsToBounds = true
+        button.layer.masksToBounds = false
+    }
+    //    MARK: Actions
+    
+    
     @IBAction func randomImageButtonTapped(_ sender: Any) {
         loadMedia(type: .random)
     }
@@ -104,7 +151,7 @@ class ImageViewController: UIViewController {
     }
     
     func presentTextInput(title: String, completion: @escaping (String?) -> ()){
-
+        
         //1. Create the alert controller.
         let alert = UIAlertController(title: title, message: "Enter a text", preferredStyle: .alert)
         
@@ -117,6 +164,15 @@ class ImageViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             if let strongAlert = alert, let textFields = strongAlert.textFields, let text = textFields[0].text {
                 completion(text)
+            }
+        }))
+        
+        //4. Add cancel
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak alert] _ in
+            if let strongAlert = alert {
+                strongAlert.dismiss(animated: true) {
+                    completion(nil)
+                }
             }
         }))
         
