@@ -16,7 +16,6 @@
 		1778A48C217E455100C66B93 /* CatsTheTerribleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A48B217E455100C66B93 /* CatsTheTerribleAppUITests.swift */; };
 		1778A49A217E456E00C66B93 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A499217E456E00C66B93 /* NetworkClient.swift */; };
 		1778A4A0217E4E4F00C66B93 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A49F217E4E4F00C66B93 /* Data.swift */; };
-		1778A4A4217E829300C66B93 /* MediaItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A4A3217E829300C66B93 /* MediaItemViewModel.swift */; };
 		1778A4A6217E954700C66B93 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		1778A48D217E455100C66B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1778A499217E456E00C66B93 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		1778A49F217E4E4F00C66B93 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		1778A4A3217E829300C66B93 /* MediaItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemViewModel.swift; sourceTree = "<group>"; };
 		1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +109,6 @@
 				1778A46D217E455000C66B93 /* ImageViewController.swift */,
 				1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */,
 				1778A46F217E455000C66B93 /* Main.storyboard */,
-				1778A4A3217E829300C66B93 /* MediaItemViewModel.swift */,
 				1778A472217E455100C66B93 /* Assets.xcassets */,
 				1778A474217E455100C66B93 /* LaunchScreen.storyboard */,
 				1778A477217E455100C66B93 /* Info.plist */,
@@ -271,7 +268,6 @@
 				1778A46E217E455000C66B93 /* ImageViewController.swift in Sources */,
 				1778A4A6217E954700C66B93 /* iOSDevCenters+GIF.swift in Sources */,
 				1778A49A217E456E00C66B93 /* NetworkClient.swift in Sources */,
-				1778A4A4217E829300C66B93 /* MediaItemViewModel.swift in Sources */,
 				1778A4A0217E4E4F00C66B93 /* Data.swift in Sources */,
 				1778A46C217E455000C66B93 /* AppDelegate.swift in Sources */,
 			);

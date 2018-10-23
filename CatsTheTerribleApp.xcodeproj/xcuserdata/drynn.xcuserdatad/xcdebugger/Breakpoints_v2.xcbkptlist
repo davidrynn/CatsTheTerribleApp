@@ -6,47 +6,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CatsTheTerribleApp/NetworkClient.swift"
-            timestampString = "561944324.896559"
+            filePath = "CatsTheTerribleApp/ImageViewController.swift"
+            timestampString = "562023822.466212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "getMediaItems(type:completion:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "loadMedia(type:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CatsTheTerribleApp.NetworkClient.getMediaItems(type: CatsTheTerribleApp.CallReturnType, completion: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;CatsTheTerribleApp.ResponseError&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;CatsTheTerribleApp.ResponseError&gt;) -&gt; () in CatsTheTerribleApp.ImageViewController.loadMedia(type: CatsTheTerribleApp.CallReturnType) -&gt; ()"
                   moduleName = "CatsTheTerribleApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/drynn/Workspace/CatsTheTerribleApp/CatsTheTerribleApp/NetworkClient.swift"
-                  timestampString = "561942229.094144"
+                  urlString = "file:///Users/drynn/Workspace/CatsTheTerribleApp/CatsTheTerribleApp/ImageViewController.swift"
+                  timestampString = "562016236.993319"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "180">
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "88">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CatsTheTerribleApp.NetworkClient.getMediaItems(type: CatsTheTerribleApp.CallReturnType, completion: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;CatsTheTerribleApp.ResponseError&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;CatsTheTerribleApp.ResponseError&gt;) -&gt; () in CatsTheTerribleApp.ImageViewController.loadMedia(type: CatsTheTerribleApp.CallReturnType) -&gt; ()"
                   moduleName = "CatsTheTerribleApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/drynn/Workspace/CatsTheTerribleApp/CatsTheTerribleApp/NetworkClient.swift"
-                  timestampString = "561942229.095932"
+                  urlString = "file:///Users/drynn/Workspace/CatsTheTerribleApp/CatsTheTerribleApp/ImageViewController.swift"
+                  timestampString = "562016236.995245"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "64">
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -54,17 +54,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CatsTheTerribleApp/NetworkClient.swift"
-            timestampString = "561944324.896634"
+            filePath = "CatsTheTerribleApp/ImageViewController.swift"
+            timestampString = "562023822.466712"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "getMediaItems(type:completion:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "loadMedia(type:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatsTheTerribleApp/ImageViewController.swift"
+            timestampString = "562023822.466964"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "loadMedia(type:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;CatsTheTerribleApp.ResponseError&gt;) -&gt; () in CatsTheTerribleApp.ImageViewController.loadMedia(type: CatsTheTerribleApp.CallReturnType) -&gt; ()"
+                  moduleName = "CatsTheTerribleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/drynn/Workspace/CatsTheTerribleApp/CatsTheTerribleApp/ImageViewController.swift"
+                  timestampString = "562016237.003159"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;CatsTheTerribleApp.ResponseError&gt;) -&gt; () in CatsTheTerribleApp.ImageViewController.loadMedia(type: CatsTheTerribleApp.CallReturnType) -&gt; ()"
+                  moduleName = "CatsTheTerribleApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/drynn/Workspace/CatsTheTerribleApp/CatsTheTerribleApp/ImageViewController.swift"
+                  timestampString = "562016237.00516"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "332">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

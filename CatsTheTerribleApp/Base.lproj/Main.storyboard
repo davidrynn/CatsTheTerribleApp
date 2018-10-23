@@ -17,8 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-tJ-R4W">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-tJ-R4W">
                                 <rect key="frame" x="0.0" y="70" width="375" height="547"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Bi4-SO-9jy" appends="YES" id="rdO-BY-zmr"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JK-KB-kty">
                                 <rect key="frame" x="0.0" y="11" width="375" height="51"/>
@@ -26,45 +30,79 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcR-yV-90q">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcR-yV-90q" userLabel="ButtonView">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7Y-TE-zpl">
-                                        <rect key="frame" x="0.0" y="0.0" width="103" height="50"/>
-                                        <state key="normal" title="Random Image"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7Y-TE-zpl">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.92763412140000001" blue="0.2078466055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Random Image">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="randomImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ywf-n3-MLk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ6-qX-3Vi">
-                                        <rect key="frame" x="294" y="0.0" width="81" height="50"/>
-                                        <state key="normal" title="Random Gif"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdB-s9-PdL" userLabel="Tag">
+                                        <rect key="frame" x="132.5" y="0.0" width="30" height="50"/>
+                                        <state key="normal" title="Tag"/>
                                         <connections>
-                                            <action selector="gifButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crq-k1-sv8"/>
-                                            <action selector="randomImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LSW-0y-mv6"/>
+                                            <action selector="tagTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ity-KZ-uNU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycU-4f-rT3">
+                                        <rect key="frame" x="280" y="0.0" width="95" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.92763412138848234" blue="0.20784660548938561" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Random Gif">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gifButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P2k-YF-BA3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyQ-GW-Ij8">
+                                        <rect key="frame" x="212.5" y="0.0" width="30" height="50"/>
+                                        <state key="normal" title="Text"/>
+                                        <connections>
+                                            <action selector="textInputTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c9F-6j-n3W"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="ycU-4f-rT3" firstAttribute="height" secondItem="CcR-yV-90q" secondAttribute="height" id="0tV-SC-yhV"/>
                                     <constraint firstItem="S7Y-TE-zpl" firstAttribute="centerY" secondItem="CcR-yV-90q" secondAttribute="centerY" id="6J1-oh-kw3"/>
-                                    <constraint firstItem="ZJ6-qX-3Vi" firstAttribute="height" secondItem="CcR-yV-90q" secondAttribute="height" id="COF-Ui-mkl"/>
-                                    <constraint firstItem="ZJ6-qX-3Vi" firstAttribute="centerY" secondItem="CcR-yV-90q" secondAttribute="centerY" id="FPz-B3-6hm"/>
-                                    <constraint firstItem="ZJ6-qX-3Vi" firstAttribute="trailing" secondItem="CcR-yV-90q" secondAttribute="trailing" id="JM3-Ju-1rB"/>
+                                    <constraint firstItem="GyQ-GW-Ij8" firstAttribute="height" secondItem="CcR-yV-90q" secondAttribute="height" id="7S1-H5-Uxe"/>
+                                    <constraint firstItem="VdB-s9-PdL" firstAttribute="centerY" secondItem="CcR-yV-90q" secondAttribute="centerY" id="I8X-8L-Fn9"/>
+                                    <constraint firstItem="GyQ-GW-Ij8" firstAttribute="centerY" secondItem="CcR-yV-90q" secondAttribute="centerY" id="M33-A5-Mhm"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="S7Y-TE-zpl" secondAttribute="trailing" constant="20" symbolic="YES" id="Wyo-sE-foZ"/>
+                                    <constraint firstItem="GyQ-GW-Ij8" firstAttribute="centerX" secondItem="CcR-yV-90q" secondAttribute="centerX" constant="40" id="YPM-rC-4aL"/>
                                     <constraint firstItem="S7Y-TE-zpl" firstAttribute="leading" secondItem="CcR-yV-90q" secondAttribute="leading" id="aqD-fp-vx9"/>
+                                    <constraint firstItem="VdB-s9-PdL" firstAttribute="height" secondItem="CcR-yV-90q" secondAttribute="height" id="aub-t8-M6o"/>
+                                    <constraint firstItem="ycU-4f-rT3" firstAttribute="centerY" secondItem="CcR-yV-90q" secondAttribute="centerY" id="eSo-6T-046"/>
                                     <constraint firstItem="S7Y-TE-zpl" firstAttribute="height" secondItem="CcR-yV-90q" secondAttribute="height" id="emv-V2-dbE"/>
+                                    <constraint firstAttribute="trailing" secondItem="ycU-4f-rT3" secondAttribute="trailing" id="hof-aq-jg6"/>
+                                    <constraint firstItem="VdB-s9-PdL" firstAttribute="centerX" secondItem="CcR-yV-90q" secondAttribute="centerX" constant="-40" id="rmD-6y-0bW"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Uc0-PR-KYK">
+                                <rect key="frame" x="169" y="325" width="37" height="37"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4NP-mL-JLs"/>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-120" id="4lS-aM-DfD"/>
+                            <constraint firstItem="Uc0-PR-KYK" firstAttribute="centerY" secondItem="pbb-tJ-R4W" secondAttribute="centerY" id="8oM-Ov-zDB"/>
                             <constraint firstItem="CcR-yV-90q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CPC-2G-cqo"/>
                             <constraint firstItem="CcR-yV-90q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Cj2-i2-YsM"/>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Cqj-TP-7PD"/>
                             <constraint firstItem="4JK-KB-kty" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="FN7-12-In1"/>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="SGN-hZ-R2B"/>
+                            <constraint firstItem="Uc0-PR-KYK" firstAttribute="centerX" secondItem="pbb-tJ-R4W" secondAttribute="centerX" id="Ti4-JB-zA6"/>
                             <constraint firstItem="4JK-KB-kty" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gEf-vu-e1W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="4JK-KB-kty" secondAttribute="top" constant="9" id="hYa-ge-GN6"/>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="top" secondItem="4JK-KB-kty" secondAttribute="bottom" constant="8" id="l2S-MU-Ips"/>
@@ -74,13 +112,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="gifImageButton" destination="ZJ6-qX-3Vi" id="qbR-V5-IBR"/>
+                        <outlet property="activityIndicator" destination="Uc0-PR-KYK" id="FKf-vL-kma"/>
+                        <outlet property="gifImageButton" destination="ycU-4f-rT3" id="y4L-gq-uen"/>
                         <outlet property="imageView" destination="pbb-tJ-R4W" id="bdI-hb-H5T"/>
                         <outlet property="label" destination="4JK-KB-kty" id="Tnm-nP-6E7"/>
                         <outlet property="randomImageButton" destination="S7Y-TE-zpl" id="N87-6o-Cm3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Bi4-SO-9jy">
+                    <connections>
+                        <action selector="longPress:" destination="BYZ-38-t0r" id="Oq0-hW-dG3"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="79.610194902548727"/>
         </scene>

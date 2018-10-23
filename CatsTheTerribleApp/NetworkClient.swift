@@ -27,17 +27,18 @@ final class NetworkClient: NetworkClientProtocol {
                     let httpError = ResponseError.networkError(code: httpResponse.statusCode)
                     completion(nil, httpError)
                 }
-                return
+
             }
             if error != nil, let error = error as NSError? {
                 let responseError = ResponseError.unknownNetworkError
                 completion(nil, responseError)
-                return
+
                 }
 
             })
         
         task.resume()
+        
     }
     
 //    func post(_ items: [MediaFile], completion: (ResponseError?) ->()) {
