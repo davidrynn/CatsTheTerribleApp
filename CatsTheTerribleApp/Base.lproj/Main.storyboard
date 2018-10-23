@@ -45,7 +45,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdB-s9-PdL" userLabel="Tag">
                                         <rect key="frame" x="132.5" y="0.0" width="30" height="50"/>
-                                        <state key="normal" title="Tag"/>
+                                        <state key="normal" title="Tag">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="tagTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ity-KZ-uNU"/>
                                         </connections>
@@ -53,6 +55,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycU-4f-rT3">
                                         <rect key="frame" x="280" y="0.0" width="95" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.92763412138848234" blue="0.20784660548938561" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="bNg-ni-bCI"/>
+                                        </constraints>
                                         <state key="normal" title="Random Gif">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,19 +68,22 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyQ-GW-Ij8">
                                         <rect key="frame" x="212.5" y="0.0" width="30" height="50"/>
-                                        <state key="normal" title="Text"/>
+                                        <state key="normal" title="Text">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="textInputTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c9F-6j-n3W"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.56852769944750836" green="0.71602151287679561" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="ycU-4f-rT3" firstAttribute="height" secondItem="CcR-yV-90q" secondAttribute="height" id="0tV-SC-yhV"/>
                                     <constraint firstItem="S7Y-TE-zpl" firstAttribute="centerY" secondItem="CcR-yV-90q" secondAttribute="centerY" id="6J1-oh-kw3"/>
                                     <constraint firstItem="GyQ-GW-Ij8" firstAttribute="height" secondItem="CcR-yV-90q" secondAttribute="height" id="7S1-H5-Uxe"/>
                                     <constraint firstItem="VdB-s9-PdL" firstAttribute="centerY" secondItem="CcR-yV-90q" secondAttribute="centerY" id="I8X-8L-Fn9"/>
                                     <constraint firstItem="GyQ-GW-Ij8" firstAttribute="centerY" secondItem="CcR-yV-90q" secondAttribute="centerY" id="M33-A5-Mhm"/>
+                                    <constraint firstItem="ycU-4f-rT3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GyQ-GW-Ij8" secondAttribute="trailing" constant="8" symbolic="YES" id="VeH-nG-oAp"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="S7Y-TE-zpl" secondAttribute="trailing" constant="20" symbolic="YES" id="Wyo-sE-foZ"/>
                                     <constraint firstItem="GyQ-GW-Ij8" firstAttribute="centerX" secondItem="CcR-yV-90q" secondAttribute="centerX" constant="40" id="YPM-rC-4aL"/>
                                     <constraint firstItem="S7Y-TE-zpl" firstAttribute="leading" secondItem="CcR-yV-90q" secondAttribute="leading" id="aqD-fp-vx9"/>
@@ -92,7 +100,7 @@
                                 <color key="color" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.75959444524310238" green="0.97826874900236716" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4NP-mL-JLs"/>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-120" id="4lS-aM-DfD"/>
