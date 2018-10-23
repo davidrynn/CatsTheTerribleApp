@@ -1,5 +1,5 @@
 //
-//  MediaFile.swift
+//  MediaItemViewModel.swift
 //  CatsTheTerribleApp
 //
 //  Created by Rynn, David on 10/22/18.
