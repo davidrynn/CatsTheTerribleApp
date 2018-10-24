@@ -67,6 +67,7 @@ class ImageViewController: UIViewController {
 ////                            .startAnimation()
 ////
 //                        UIView.transition(with: self.visualEffectView.contentView, duration: timeInterval, options: .transitionCrossDissolve, animations: { self.visualEffectView.backgroundColor = UIColor(patternImage: image) }, completion: nil)
+
                     }
                     
                     
