@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,9 +35,12 @@
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7Y-TE-zpl">
-                                        <rect key="frame" x="0.0" y="0.0" width="122" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.92763412140000001" blue="0.2078466055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Random Image">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="iLp-Fk-06V"/>
+                                        </constraints>
+                                        <state key="normal" title="Image">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -51,9 +55,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycU-4f-rT3">
-                                        <rect key="frame" x="280" y="0.0" width="95" height="50"/>
+                                        <rect key="frame" x="315" y="0.0" width="60" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.92763412138848234" blue="0.20784660548938561" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Random Gif">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Ya4-xc-GVo"/>
+                                        </constraints>
+                                        <state key="normal" title="GIF">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>

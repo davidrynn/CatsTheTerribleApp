@@ -23,6 +23,9 @@ class ImageViewController: UIViewController {
         super.viewDidLoad()
         networkClient = NetworkClient()
         loadMedia(type: .random)
+        roundButton(gifImageButton)
+        roundButton(randomImageButton)
+
     }
     
     func loadMedia(type: CallReturnType) {
@@ -59,6 +62,13 @@ class ImageViewController: UIViewController {
             }
         }
 
+    }
+    func roundButton(_ button: UIButton) {
+        button.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        button.layer.shadowRadius = 1.0
+        button.layer.shadowOffset = CGSize(width: 60, height: 60)
+        button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        button.clipsToBounds = true
     }
 //    MARK: Actions
     
