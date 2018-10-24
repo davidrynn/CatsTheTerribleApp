@@ -18,16 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JD-Qf-zzF">
-                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
-                                <view key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8Ib-Up-hxe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-tJ-R4W">
                                 <rect key="frame" x="0.0" y="70" width="375" height="547"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Bi4-SO-9jy" appends="YES" id="rdO-BY-zmr"/>
@@ -39,15 +32,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcR-yV-90q" userLabel="ButtonView">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcR-yV-90q" userLabel="ButtonView">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7Y-TE-zpl">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.92763412140000001" blue="0.2078466055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="iLp-Fk-06V"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Image">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -56,11 +50,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdB-s9-PdL" userLabel="Tag">
-                                        <rect key="frame" x="122.5" y="0.0" width="50" height="50"/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="117.5" y="0.0" width="60" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="Cqe-A7-hy6"/>
+                                            <constraint firstAttribute="width" constant="60" id="Cqe-A7-hy6"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Tag"/>
                                         <connections>
                                             <action selector="tagTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ity-KZ-uNU"/>
@@ -68,10 +63,11 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycU-4f-rT3">
                                         <rect key="frame" x="315" y="0.0" width="60" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.92763412138848234" blue="0.20784660548938561" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Ya4-xc-GVo"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="GIF">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,11 +77,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyQ-GW-Ij8">
-                                        <rect key="frame" x="202.5" y="0.0" width="50" height="50"/>
-                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="197.5" y="0.0" width="60" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="HfT-pJ-nYP"/>
+                                            <constraint firstAttribute="width" constant="60" id="HfT-pJ-nYP"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Text"/>
                                         <connections>
                                             <action selector="textInputTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c9F-6j-n3W"/>
@@ -115,7 +112,7 @@
                                 <color key="color" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4NP-mL-JLs"/>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-120" id="4lS-aM-DfD"/>
@@ -126,27 +123,23 @@
                             <constraint firstItem="4JK-KB-kty" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="FN7-12-In1"/>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="SGN-hZ-R2B"/>
                             <constraint firstItem="Uc0-PR-KYK" firstAttribute="centerX" secondItem="pbb-tJ-R4W" secondAttribute="centerX" id="Ti4-JB-zA6"/>
-                            <constraint firstItem="8JD-Qf-zzF" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="b1i-f0-00Q"/>
                             <constraint firstItem="4JK-KB-kty" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gEf-vu-e1W"/>
-                            <constraint firstItem="8JD-Qf-zzF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="h6F-J6-j9X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="4JK-KB-kty" secondAttribute="top" constant="9" id="hYa-ge-GN6"/>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="top" secondItem="4JK-KB-kty" secondAttribute="bottom" constant="8" id="l2S-MU-Ips"/>
-                            <constraint firstItem="8JD-Qf-zzF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="mxE-0x-QOA"/>
                             <constraint firstItem="CcR-yV-90q" firstAttribute="top" secondItem="pbb-tJ-R4W" secondAttribute="bottom" id="qWP-lc-kMl"/>
                             <constraint firstItem="CcR-yV-90q" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="v8u-fF-wGc"/>
-                            <constraint firstItem="8JD-Qf-zzF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wEw-Ku-7dj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Uc0-PR-KYK" id="FKf-vL-kma"/>
+                        <outlet property="buttonContainerView" destination="CcR-yV-90q" id="jAq-P5-IPY"/>
                         <outlet property="gifImageButton" destination="ycU-4f-rT3" id="y4L-gq-uen"/>
                         <outlet property="imageView" destination="pbb-tJ-R4W" id="bdI-hb-H5T"/>
                         <outlet property="label" destination="4JK-KB-kty" id="Tnm-nP-6E7"/>
                         <outlet property="randomImageButton" destination="S7Y-TE-zpl" id="N87-6o-Cm3"/>
                         <outlet property="tagButton" destination="VdB-s9-PdL" id="Z3F-IE-hUA"/>
                         <outlet property="textButton" destination="GyQ-GW-Ij8" id="efi-Aa-EWu"/>
-                        <outlet property="visualEffectView" destination="8JD-Qf-zzF" id="HHW-ev-U4j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
