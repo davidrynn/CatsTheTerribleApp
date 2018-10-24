@@ -98,10 +98,12 @@ class ImageViewController: UIViewController {
     
     func roundButton(_ button: UIButton) {
         button.frame = CGRect(x: 100, y: 100, width: 50, height: 50)
-        //        button.layer.shadowRadius = 1.0
-        //        button.layer.shadowOffset = CGSize(width: 100, height: 100)
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        button.layer.shadowRadius = 1.0
+        button.layer.shadowOpacity = 0.8
+        button.layer.shadowOffset = CGSize(width: 1, height: 2)
         button.clipsToBounds = true
+        button.layer.masksToBounds = false
     }
     //    MARK: Actions
     
