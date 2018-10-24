@@ -55,16 +55,19 @@ class ImageViewController: UIViewController {
                     self.label.text = "Loaded"
                     if let image = dataImage {
                         //animate image and background blur
-                        DispatchQueue.main.async {
-                            UIView.animate(withDuration: 0.5,
-                                           delay: 0,
-                                           options: [.transitionCrossDissolve, .allowAnimatedContent],
-                                           animations: {
-                                self.imageView.image = image
-                                self.visualEffectView.backgroundColor = UIColor(patternImage: image)
-                                
-                            }, completion: nil)
-                        }
+                        let timeInterval = 1.0
+                        UIView.transition(with: self.imageView, duration: timeInterval, options: .transitionCrossDissolve, animations: {
+                            self.imageView.image = image
+                            self.visualEffectView.backgroundColor = UIColor(patternImage: image)
+                        }, completion: nil)
+                        
+////                        UIViewPropertyAnimator(duration: timeInterval, curve: .easeInOut, animations:
+////                        UIView.animate(withDuration: timeInterval)
+////                        { self.visualEffectView.backgroundColor = UIColor(patternImage: image) }
+////                            .startAnimation()
+////
+//                        UIView.transition(with: self.visualEffectView.contentView, duration: timeInterval, options: .transitionCrossDissolve, animations: { self.visualEffectView.backgroundColor = UIColor(patternImage: image) }, completion: nil)
+
                     }
                     
                     
@@ -162,6 +165,15 @@ class ImageViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             if let strongAlert = alert, let textFields = strongAlert.textFields, let text = textFields[0].text {
                 completion(text)
+            }
+        }))
+        
+        //4. Add cancel
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak alert] _ in
+            if let strongAlert = alert {
+                strongAlert.dismiss(animated: true) {
+                    completion(nil)
+                }
             }
         }))
         
