@@ -11,12 +11,14 @@ import Photos
 
 class ImageViewController: UIViewController {
 
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var randomImageButton: UIButton!
     @IBOutlet weak var gifImageButton: UIButton!
+    @IBOutlet weak var tagButton: UIButton!
+    @IBOutlet weak var textButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     var networkClient: NetworkClient?
     
     override func viewDidLoad() {
@@ -25,6 +27,8 @@ class ImageViewController: UIViewController {
         loadMedia(type: .random)
         roundButton(gifImageButton)
         roundButton(randomImageButton)
+        roundButton(textButton)
+        roundButton(tagButton)
 
     }
     
@@ -38,13 +42,23 @@ class ImageViewController: UIViewController {
                     switch type {
                     case .random, .tag, .text:
                         if let image = UIImage(data: data) {
-                            self.imageView.image = image }
+                            self.imageView.image = image
+                            self.visualEffectView.contentView.backgroundColor = UIColor(patternImage: image)
+                        }
                         else {
                             self.label.text = "Error loading image"
                             }
                     case .gif:
                         if let gif = UIImage.gifImageWithData(data) {
                             self.imageView.image = gif
+                            var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+                            
+                            visualEffectView.frame = self.view.bounds
+                            self.view.backgroundColor = UIColor(patternImage: gif)
+                            self.view.addSubview(visualEffectView)
+//                            let effect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+//                            self.visualEffectView.effect = effect
+//                            self.visualEffectView.contentView.backgroundColor = UIColor(patternImage: gif)
                         }
                     }
                     self.label.text = "Loaded"
@@ -64,9 +78,10 @@ class ImageViewController: UIViewController {
 
     }
     func roundButton(_ button: UIButton) {
-        button.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
-        button.layer.shadowRadius = 1.0
-        button.layer.shadowOffset = CGSize(width: 60, height: 60)
+        button.frame = CGRect(x: 100, y: 100, width: 50, height: 50)
+//        button.layer.shadowRadius = 1.0
+//        button.layer.shadowOffset = CGSize(width: 100, height: 100)
+        button.layer.borderWidth = 1.0
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.clipsToBounds = true
     }

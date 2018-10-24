@@ -18,6 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JD-Qf-zzF">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <view key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8Ib-Up-hxe">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-tJ-R4W">
                                 <rect key="frame" x="0.0" y="70" width="375" height="547"/>
                                 <gestureRecognizers/>
@@ -48,7 +56,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdB-s9-PdL" userLabel="Tag">
-                                        <rect key="frame" x="132.5" y="0.0" width="30" height="50"/>
+                                        <rect key="frame" x="122.5" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Cqe-A7-hy6"/>
+                                        </constraints>
                                         <state key="normal" title="Tag"/>
                                         <connections>
                                             <action selector="tagTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ity-KZ-uNU"/>
@@ -69,7 +81,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyQ-GW-Ij8">
-                                        <rect key="frame" x="212.5" y="0.0" width="30" height="50"/>
+                                        <rect key="frame" x="202.5" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="HfT-pJ-nYP"/>
+                                        </constraints>
                                         <state key="normal" title="Text"/>
                                         <connections>
                                             <action selector="textInputTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c9F-6j-n3W"/>
@@ -110,11 +126,15 @@
                             <constraint firstItem="4JK-KB-kty" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="FN7-12-In1"/>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="SGN-hZ-R2B"/>
                             <constraint firstItem="Uc0-PR-KYK" firstAttribute="centerX" secondItem="pbb-tJ-R4W" secondAttribute="centerX" id="Ti4-JB-zA6"/>
+                            <constraint firstItem="8JD-Qf-zzF" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="b1i-f0-00Q"/>
                             <constraint firstItem="4JK-KB-kty" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gEf-vu-e1W"/>
+                            <constraint firstItem="8JD-Qf-zzF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="h6F-J6-j9X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="4JK-KB-kty" secondAttribute="top" constant="9" id="hYa-ge-GN6"/>
                             <constraint firstItem="pbb-tJ-R4W" firstAttribute="top" secondItem="4JK-KB-kty" secondAttribute="bottom" constant="8" id="l2S-MU-Ips"/>
+                            <constraint firstItem="8JD-Qf-zzF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="mxE-0x-QOA"/>
                             <constraint firstItem="CcR-yV-90q" firstAttribute="top" secondItem="pbb-tJ-R4W" secondAttribute="bottom" id="qWP-lc-kMl"/>
                             <constraint firstItem="CcR-yV-90q" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="v8u-fF-wGc"/>
+                            <constraint firstItem="8JD-Qf-zzF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wEw-Ku-7dj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -124,6 +144,9 @@
                         <outlet property="imageView" destination="pbb-tJ-R4W" id="bdI-hb-H5T"/>
                         <outlet property="label" destination="4JK-KB-kty" id="Tnm-nP-6E7"/>
                         <outlet property="randomImageButton" destination="S7Y-TE-zpl" id="N87-6o-Cm3"/>
+                        <outlet property="tagButton" destination="VdB-s9-PdL" id="Z3F-IE-hUA"/>
+                        <outlet property="textButton" destination="GyQ-GW-Ij8" id="efi-Aa-EWu"/>
+                        <outlet property="visualEffectView" destination="8JD-Qf-zzF" id="HHW-ev-U4j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
