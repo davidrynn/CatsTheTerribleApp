@@ -16,6 +16,7 @@ protocol NetworkClientProtocol {
 }
 
 final class NetworkClient: NetworkClientProtocol {
+    
     func getMediaItems(type: CallReturnType, completion: @escaping (Foundation.Data?, ResponseError?) -> ()) {
         let session = URLSession(configuration: .default)
         let url = self.makeURL(type)
@@ -32,7 +33,6 @@ final class NetworkClient: NetworkClientProtocol {
             if error != nil, let error = error as NSError? {
                 let responseError = ResponseError.unknownNetworkError
                 completion(nil, responseError)
-
                 }
 
             })
