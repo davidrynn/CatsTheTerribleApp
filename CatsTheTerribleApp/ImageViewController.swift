@@ -38,7 +38,7 @@ class ImageViewController: UIViewController {
         activityIndicator.startAnimating()
         guard let client = networkClient else { return }
         self.label.text = "Download Started"
-        client.getMediaData(type: type) { data, error in
+        client.getJSONData(type: type) { data, error in
             DispatchQueue.main.async {
                 var dataImage: UIImage? = nil
                 if let callData = data {

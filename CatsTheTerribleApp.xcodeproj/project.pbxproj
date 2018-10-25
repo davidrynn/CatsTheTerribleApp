@@ -18,6 +18,8 @@
 		1778A4A0217E4E4F00C66B93 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A49F217E4E4F00C66B93 /* Data.swift */; };
 		1778A4A6217E954700C66B93 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */; };
 		22B4830421811D9B00F241CD /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4830321811D9B00F241CD /* ImageViewModel.swift */; };
+		22B48306218273E800F241CD /* JSONClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B48305218273E800F241CD /* JSONClient.swift */; };
+		22B4830821829B9500F241CD /* LinkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4830721829B9500F241CD /* LinkClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		1778A49F217E4E4F00C66B93 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		22B4830321811D9B00F241CD /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		22B48305218273E800F241CD /* JSONClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONClient.swift; sourceTree = "<group>"; };
+		22B4830721829B9500F241CD /* LinkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				1778A499217E456E00C66B93 /* NetworkClient.swift */,
+				22B48305218273E800F241CD /* JSONClient.swift */,
+				22B4830721829B9500F241CD /* LinkClient.swift */,
 				1778A46B217E455000C66B93 /* AppDelegate.swift */,
 				1778A46D217E455000C66B93 /* ImageViewController.swift */,
 				22B4830321811D9B00F241CD /* ImageViewModel.swift */,
@@ -268,8 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B4830821829B9500F241CD /* LinkClient.swift in Sources */,
 				22B4830421811D9B00F241CD /* ImageViewModel.swift in Sources */,
 				1778A46E217E455000C66B93 /* ImageViewController.swift in Sources */,
+				22B48306218273E800F241CD /* JSONClient.swift in Sources */,
 				1778A4A6217E954700C66B93 /* iOSDevCenters+GIF.swift in Sources */,
 				1778A49A217E456E00C66B93 /* NetworkClient.swift in Sources */,
 				1778A4A0217E4E4F00C66B93 /* Data.swift in Sources */,
