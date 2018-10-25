@@ -8,16 +8,16 @@
 
 import Foundation
 
-// Will use https://cataas.com
+// Will use https://cataas.com https://api.thecatapi.com
 
 protocol NetworkClientProtocol {
-    func getMediaItems(type: CallReturnType, completion: @escaping (Foundation.Data?, ResponseError?) -> ())
+    func getMediaData(type: CallReturnType, completion: @escaping (Foundation.Data?, ResponseError?) -> ())
 //    func post(_ items: [MediaFile], completion: (ResponseError?) -> ())
 }
 
 final class NetworkClient: NetworkClientProtocol {
     
-    func getMediaItems(type: CallReturnType, completion: @escaping (Foundation.Data?, ResponseError?) -> ()) {
+    func getMediaData(type: CallReturnType, completion: @escaping (Foundation.Data?, ResponseError?) -> ()) {
         let session = URLSession(configuration: .default)
         let url = self.makeURL(type)
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
@@ -47,7 +47,7 @@ final class NetworkClient: NetworkClientProtocol {
 //    }
     
     private func makeURL(_ callType: CallReturnType) -> URL {
-        let fullURLString = "https://cataas.com/" + callType.description
+        let fullURLString = "https://api.thecatapi.com/search?format=json" + callType.description
         guard let url = URL(string: fullURLString) else {
             fatalError("unable to build URL from string")
         }
@@ -70,9 +70,9 @@ enum CallReturnType: CustomStringConvertible {
     var description: String {
         switch self {
         case .random:
-            return "cat"
+            return "&mime_types=jpg,png"
         case .gif:
-            return "cat/gif"
+            return "&mime_types=gif"
         case let .tag(tag):
             return "cat/\(tag)"
         case let .text(text):
