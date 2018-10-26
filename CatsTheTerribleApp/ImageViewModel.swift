@@ -20,18 +20,9 @@ struct ImageViewModel {
     }
 }
 
-struct MediaItemsArrayStruct: Codable {
-    
-}
-
 struct MediaItemStruct: Codable {
     let id: String?
     let url: String?
     let breeds: [String]?
     let categories: [String]?
-  //  "id":"af","url":"https://24.media.tumblr.com/ZabOTt2mpdqnm6k4JXjnAe7D_500.jpg","breeds":[],"categories":[]}]
-    enum CodingKeys: String, CodingKey {
-        //Encoding/decoding will only include the properties defined in this enum, rest will be ignored
-        case id, url, breeds, categories
-    }
 }

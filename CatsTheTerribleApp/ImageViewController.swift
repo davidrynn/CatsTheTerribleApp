@@ -37,27 +37,32 @@ class ImageViewController: UIViewController {
         activityIndicator.startAnimating()
         self.label.text = "Download Started"
         viewModel.getImage(type: type) { image, error in
-            DispatchQueue.main.async {
-                if let finalImage = image {
-                    //animate image and background blur
-                    let timeInterval = 1.0
-                    UIView.transition(with: self.imageView, duration: timeInterval, options: .transitionCrossDissolve, animations: {
-                        self.imageView.image = finalImage
-                        self.visualEffectView.backgroundColor = UIColor(patternImage: finalImage)
-                    }, completion: nil)
-                } else {
-                    switch type {
-                    case .tag, .text:
-                        self.label.text = "No images for that search"
-                    default:
-                        self.label.text = "ERROR LOADING"
+            if error == nil {
+                DispatchQueue.main.async {
+                    if let finalImage = image {
+                        //animate image and background blur
+                        let timeInterval = 1.0
+                        UIView.transition(with: self.imageView, duration: timeInterval, options: .transitionCrossDissolve, animations: {
+                            self.imageView.image = finalImage
+                            self.visualEffectView.backgroundColor = UIColor(patternImage: finalImage)
+                            self.label.text = "loaded"
+                            self.activityIndicator.stopAnimating()
+                            self.view.setNeedsLayout()
+                        }, completion: nil)
+                    } else {
+                        switch type {
+                        case .tag, .text:
+                            self.label.text = "No images for that search"
+                        default:
+                            self.label.text = "No image found"
+                        }
                     }
                 }
+            } else {
+                self.label.text = error?.localizedDescription ?? "Error loading image"
             }
-            
         }
-        self.activityIndicator.stopAnimating()
-        self.view.setNeedsLayout()
+        
     }
     
     //    MARK: Setups
@@ -157,4 +162,3 @@ class ImageViewController: UIViewController {
     }
     
 }
-
