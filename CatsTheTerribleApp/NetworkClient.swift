@@ -62,7 +62,7 @@ final class NetworkClient: NetworkClientProtocol {
         case let .url(text):
             fullURLString = text
         default:
-            fullURLString = "https://api.thecatapi.com/search?format=json" + callType.description
+            fullURLString = "https://api.thecatapi.com/v1/images/search?format=json" + callType.description
         }
 
         guard let url = URL(string: fullURLString) else {

@@ -21,78 +21,45 @@ class ImageViewController: UIViewController {
     @IBOutlet weak var textButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var visualEffectView: UIVisualEffectView!
-    var networkClient: NetworkClient!
     var viewModel: ImageViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         roundButtons()
-        networkClient = NetworkClient()
-        setupBlurBackground()
-        viewModel = ImageViewModel(networkClient: networkClient)
-        loadMedia(type: .random)
         
+        setupBlurBackground()
+        let service = ImagingService()
+        viewModel = ImageViewModel(imagingService: service)
+        loadMedia(type: .random)
     }
     
     func loadMedia(type: CallReturnType) {
         activityIndicator.startAnimating()
-        guard let client = networkClient else { return }
         self.label.text = "Download Started"
-        client.getJSONData(type: type) { data, error in
+        viewModel.getImage(type: type) { image, error in
             DispatchQueue.main.async {
-                var dataImage: UIImage? = nil
-                if let callData = data {
-                    try! self.viewModel.getImageFromData(type: type, data: callData) { imageData, error in
-                        if let data = imageData {
-                            switch type {
-                            case .random, .tag, .text:
-                                if let image = UIImage(data: data) {
-                                    dataImage = image
-                                }
-                                else {
-                                    self.label.text = "Error loading image"
-                                }
-                            case .gif:
-                                if let gif = UIImage.gifImageWithData(data) {
-                                    dataImage = gif
-                                }
-                            }
-                            self.label.text = "Loaded"
-                            if let image = dataImage {
-                                //animate image and background blur
-                                let timeInterval = 1.0
-                                UIView.transition(with: self.imageView, duration: timeInterval, options: .transitionCrossDissolve, animations: {
-                                    self.imageView.image = image
-                                    self.visualEffectView.backgroundColor = UIColor(patternImage: image)
-                                }, completion: nil)
-                                
-                                ////                        UIViewPropertyAnimator(duration: timeInterval, curve: .easeInOut, animations:
-                                ////                        UIView.animate(withDuration: timeInterval)
-                                ////                        { self.visualEffectView.backgroundColor = UIColor(patternImage: image) }
-                                ////                            .startAnimation()
-                                ////
-                                //                        UIView.transition(with: self.visualEffectView.contentView, duration: timeInterval, options: .transitionCrossDissolve, animations: { self.visualEffectView.backgroundColor = UIColor(patternImage: image) }, completion: nil)
-                                
-                            }
-                            
-                            
-                        } else {
-                            switch type {
-                            case .tag, .text:
-                                self.label.text = "No images for that search"
-                            default:
-                                self.label.text = "ERROR LOADING"
-                            }
-                        }
+                if let finalImage = image {
+                    //animate image and background blur
+                    let timeInterval = 1.0
+                    UIView.transition(with: self.imageView, duration: timeInterval, options: .transitionCrossDissolve, animations: {
+                        self.imageView.image = finalImage
+                        self.visualEffectView.backgroundColor = UIColor(patternImage: finalImage)
+                    }, completion: nil)
+                } else {
+                    switch type {
+                    case .tag, .text:
+                        self.label.text = "No images for that search"
+                    default:
+                        self.label.text = "ERROR LOADING"
                     }
-                    
                 }
-                self.activityIndicator.stopAnimating()
-                self.view.setNeedsLayout()
             }
+            
         }
-        
+        self.activityIndicator.stopAnimating()
+        self.view.setNeedsLayout()
     }
+    
     //    MARK: Setups
     func setupBlurBackground() {
         let effect = UIBlurEffect(style: .light)

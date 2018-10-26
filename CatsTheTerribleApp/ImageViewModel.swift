@@ -8,26 +8,30 @@
 
 import UIKit
 
+
 struct ImageViewModel {
     
-    let networkClient: NetworkClient
+    let imagingService: ImagingService
     
-    func getImageFromData(type: CallReturnType, data: Foundation.Data,
-                          completion: @escaping (Foundation.Data?, ResponseError?)->()) throws {
-//         let photoObject = try? JSONDecoder().decode(Photo.self, from: jsonData)
-        let mediaItem: MediaItemStruct? =  try? JSONDecoder().decode(MediaItemStruct.self, from: data)
-        if let media = mediaItem, let url = URL(string: media.urlString) {
-            networkClient.getMediaData(type: type, completion: { data, response in
-                completion(data, response)
-            })
+    func getImage(type: CallReturnType, completion: @escaping ImageClosure) {
+        imagingService.getImage(type: type) { image, error in
+            completion(image, error)
         }
     }
 }
 
-struct MediaItemStruct: Codable {
-    let id: String
-    let urlString: String
-    let breeds: [String]
-    let categories: [String]
+struct MediaItemsArrayStruct: Codable {
     
+}
+
+struct MediaItemStruct: Codable {
+    let id: String?
+    let url: String?
+    let breeds: [String]?
+    let categories: [String]?
+  //  "id":"af","url":"https://24.media.tumblr.com/ZabOTt2mpdqnm6k4JXjnAe7D_500.jpg","breeds":[],"categories":[]}]
+    enum CodingKeys: String, CodingKey {
+        //Encoding/decoding will only include the properties defined in this enum, rest will be ignored
+        case id, url, breeds, categories
+    }
 }

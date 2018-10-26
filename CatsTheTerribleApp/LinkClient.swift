@@ -10,7 +10,9 @@ import Foundation
 struct LinkClient {
     let networkClient: NetworkClient
     
-    func getImageFromLink(url: URL) {
-        networkClient.ge
+    func getImageDataFromLink(url: URL, completion: @escaping (Foundation.Data?, Error?)->()) {
+        networkClient.getLinkData(url: url) { data, responseError in
+            completion(data, responseError)
+        }
     }
 }

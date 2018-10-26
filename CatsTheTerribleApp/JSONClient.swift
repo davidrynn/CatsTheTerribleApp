@@ -18,8 +18,9 @@ struct JSONClient {
                     return
                 }
                 do {
-                    let media = try JSONDecoder().decode(MediaItemStruct.self, from: jsonData)
-                    completion(media, nil)
+                    let decoder = JSONDecoder()
+                    let media = try decoder.decode([MediaItemStruct].self, from: jsonData)
+                    completion(media.first!, nil)
                 } catch {
                     completion(nil, .unableToDecode)
                 }
