@@ -32,7 +32,9 @@ final class NetworkClient: NetworkClientProtocol {
     
     private func startTask(url: URL, completion: @escaping (Foundation.Data?, ResponseError?) -> ()) {
         let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: url, completionHandler: { data, response, error in
+        var request = URLRequest(url: url)
+        request.setValue("1eea119b-a1cb-44bb-94fa-1b02cbd282fa", forHTTPHeaderField: "x-api-key")
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
             if let httpResponse = response as? HTTPURLResponse {
                 if let imageData = data, ((200 ... 299).contains( httpResponse.statusCode)) {
                     completion(imageData, nil)
