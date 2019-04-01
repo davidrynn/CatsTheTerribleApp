@@ -20,6 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Enable camera access to take photos.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Enable photo library access to save images to your photo library directly from the app.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Enable photo library access to select a photo from your library.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,11 +47,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSCameraUsageDescription</key>
-    <string>Enable camera access to take photos.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Enable photo library access to select a photo from your library.</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Enable photo library access to save images to your photo library directly from the app.</string>
 </dict>
 </plist>

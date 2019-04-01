@@ -17,6 +17,10 @@
 		1778A49A217E456E00C66B93 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A499217E456E00C66B93 /* NetworkClient.swift */; };
 		1778A4A0217E4E4F00C66B93 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A49F217E4E4F00C66B93 /* Data.swift */; };
 		1778A4A6217E954700C66B93 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */; };
+		22B4830421811D9B00F241CD /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4830321811D9B00F241CD /* ImageViewModel.swift */; };
+		22B48306218273E800F241CD /* JSONClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B48305218273E800F241CD /* JSONClient.swift */; };
+		22B4830821829B9500F241CD /* LinkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4830721829B9500F241CD /* LinkClient.swift */; };
+		22B4830A2182B15400F241CD /* ImagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B483092182B15400F241CD /* ImagingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		1778A499217E456E00C66B93 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		1778A49F217E4E4F00C66B93 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
+		22B4830321811D9B00F241CD /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		22B48305218273E800F241CD /* JSONClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONClient.swift; sourceTree = "<group>"; };
+		22B4830721829B9500F241CD /* LinkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkClient.swift; sourceTree = "<group>"; };
+		22B483092182B15400F241CD /* ImagingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				1778A499217E456E00C66B93 /* NetworkClient.swift */,
+				22B48305218273E800F241CD /* JSONClient.swift */,
+				22B4830721829B9500F241CD /* LinkClient.swift */,
 				1778A46B217E455000C66B93 /* AppDelegate.swift */,
 				1778A46D217E455000C66B93 /* ImageViewController.swift */,
+				22B483092182B15400F241CD /* ImagingService.swift */,
+				22B4830321811D9B00F241CD /* ImageViewModel.swift */,
 				1778A4A5217E954700C66B93 /* iOSDevCenters+GIF.swift */,
 				1778A46F217E455000C66B93 /* Main.storyboard */,
 				1778A472217E455100C66B93 /* Assets.xcassets */,
@@ -265,8 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B4830821829B9500F241CD /* LinkClient.swift in Sources */,
+				22B4830421811D9B00F241CD /* ImageViewModel.swift in Sources */,
 				1778A46E217E455000C66B93 /* ImageViewController.swift in Sources */,
+				22B48306218273E800F241CD /* JSONClient.swift in Sources */,
 				1778A4A6217E954700C66B93 /* iOSDevCenters+GIF.swift in Sources */,
+				22B4830A2182B15400F241CD /* ImagingService.swift in Sources */,
 				1778A49A217E456E00C66B93 /* NetworkClient.swift in Sources */,
 				1778A4A0217E4E4F00C66B93 /* Data.swift in Sources */,
 				1778A46C217E455000C66B93 /* AppDelegate.swift in Sources */,
@@ -445,17 +461,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8L9G24X88V;
+				DEVELOPMENT_TEAM = 3KR65ZULS9;
 				INFOPLIST_FILE = CatsTheTerribleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.david.www.CatsTheTerribleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = org.david.CatsTheTerribleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -464,17 +480,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8L9G24X88V;
+				DEVELOPMENT_TEAM = 3KR65ZULS9;
 				INFOPLIST_FILE = CatsTheTerribleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.david.www.CatsTheTerribleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = org.david.CatsTheTerribleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
